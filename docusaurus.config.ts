@@ -57,25 +57,75 @@ const config: Config = {
       title: 'ODE',
       logo: {
         alt: 'ODE Logo',
-        src: 'img/ode_logo.png',
+        src: 'img/ode-logo-clear.png',
       },
+      hideOnScroll: false,
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          docsPluginId: 'default',
-          position: 'left',
+          type: 'doc',
+          docId: 'ODE',
+          position: 'right',
           label: 'Documentation',
         },
         {
-          label: 'API',
-          to: '/api',
-          position: 'left',
+          label: 'Product',
+          position: 'right',
+          items: [
+            {
+              type: 'doc',
+              docId: 'documentation/synkronus/synkronus',
+              label: 'Synkronus',
+            },
+            {
+              type: 'doc',
+              docId: 'documentation/formulus/formulus',
+              label: 'Formulus',
+            },
+            {
+              type: 'doc',
+              docId: 'documentation/synkronus-cli/cli',
+              label: 'Synkronus CLI',
+            },
+          ],
         },
         {
-          href: 'https://github.com/opendataensemble',
-          label: 'GitHub',
+          label: 'Community',
           position: 'right',
+          items: [
+            {
+              label: 'Forum',
+              href: 'https://forum.opendataensemble.org',
+            },
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/opendataensemble',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/opendataensemble',
+            },
+          ],
+        },
+        {
+          label: 'About Us',
+          position: 'right',
+          items: [
+            {
+              type: 'doc',
+              docId: 'ODE',
+              label: 'Overview',
+            },
+            {
+              type: 'doc',
+              docId: 'quick-start/index',
+              label: 'Quick Start',
+            },
+            {
+              type: 'doc',
+              docId: 'For-developers/docusaurus/intro',
+              label: 'For Developers',
+            },
+          ],
         },
       ],
     },
