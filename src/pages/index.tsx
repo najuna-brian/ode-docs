@@ -13,14 +13,14 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx("hero", styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+        <Heading as="h1" className={styles.heroTitle}>
+          {siteConfig.tagline}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-
-        <img src={require('@site/static/img/ensemble.png').default} className={styles.featureImg} alt="The Open Data Ensemble" />
+        <Link className="button button--primary button--lg" to="/docs/ODE" style={{ marginTop: "2rem" }}>
+          Get Started
+        </Link>
       </div>
     </header>
   );
@@ -29,9 +29,7 @@ function HomepageHeader() {
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={siteConfig.title}
-      description={siteConfig.tagline}>
+    <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <AnnouncementBanner />
       <HomepageHeader />
       <main>
@@ -68,7 +66,7 @@ export default function Home(): ReactNode {
                 </p>
                 <Link
                   className="button button--primary button--lg"
-                  to="/docs/quick-start/"
+                  to="/docs/quick-start/index"
                   style={{ marginTop: "1.5rem" }}
                 >
                   Explore Documentation
@@ -194,6 +192,11 @@ export default function Home(): ReactNode {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className={styles.newsletterSection}>
+          <Newsletter />
         </section>
       </main>
     </Layout>
