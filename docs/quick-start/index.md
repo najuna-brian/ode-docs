@@ -4,46 +4,65 @@ sidebar_position: 1
 
 # Quick Start
 
-Get started with ODE in minutes.
+Set up Open Data Ensemble (ODE) the same way the Community Health Toolkit organizes its “Getting Started” material: short sections, checklists, and a single diagram to anchor the work.
 
-## Overview
+## What You Will Do
 
-This section will help you set up your development environment and deploy your first ODE instance.
+1. Confirm the [prerequisites](/docs/quick-start/prerequisites) hardware, software, and skills.
+2. Follow [setup environment](/docs/quick-start/setup-environment) to install Git, Docker, Node.js, and the Synkronus CLI.
+3. [Deploy a local instance](/docs/quick-start/deploy-local-instance) of Synkronus with Docker Compose.
+4. [Upload test data](/docs/quick-start/upload-test-data) so you have something to explore.
+5. Install the [Formulus app](/docs/quick-start/formulus-app) and point it at your local server.
+6. Review [Making it yours](/docs/quick-start/custom-app) to plan your first customizations.
 
-<Cards>
-  <Card 
-    link="/docs/quick-start/prerequisites" 
-    title="Prerequisites" 
-    subtitle="Tools and skills needed for developing ODE applications"
-  />
-  <Card 
-    link="/docs/quick-start/setup-environment" 
-    title="Setup Environment" 
-    subtitle="Configure your development environment"
-  />
-  <Card 
-    link="/docs/quick-start/deploy-local-instance" 
-    title="Deploy Local Instance" 
-    subtitle="Set up a local ODE environment for development and testing"
-  />
-</Cards>
+> [!TIP]
+> Complete the pages in order—each one assumes the previous step is done, mirroring the flow in cht-docs.
 
-## Installation Guides
+## System Overview
 
-<Cards>
-  <Card 
-    link="/docs/quick-start/formulus-app" 
-    title="Formulus App" 
-    subtitle="Install the mobile application for Android and iOS"
-  />
-  <Card 
-    link="/docs/quick-start/synkronus-server" 
-    title="Synkronus Server" 
-    subtitle="Set up the server backend"
-  />
-  <Card 
-    link="/docs/quick-start/custom-app" 
-    title="Custom App" 
-    subtitle="Create your first custom application"
-  />
-</Cards>
+```mermaid
+flowchart LR
+  subgraph Clients
+    formulus["Formulus (Android/iOS)"]
+  end
+
+  subgraph Synkronus Stack
+    server["Synkronus Server"]
+    db[(PostgreSQL)]
+    admin["Admin Console"]
+  end
+
+  cli["Synkronus CLI"]
+
+  cli -->|Deploy bundles\nManage settings| server
+  admin -->|Login & monitor| server
+  formulus -->|Sync data| server
+  server --> db
+```
+
+This simple diagram matches the one in our internal docs: Synkronus CLI and Admin Console push configuration to the server, Formulus syncs data, and PostgreSQL stores it.
+
+## Quick Checklist
+
+- [ ] Laptop running Linux, macOS, or Windows with WSL2
+- [ ] Docker Desktop / Docker Engine installed and running
+- [ ] Node.js 18+ and Git installed
+- [ ] Synkronus CLI downloaded (Linux, macOS, or Windows)
+- [ ] Android Studio, plus Xcode if you plan to test iOS
+
+## Output of This Guide
+
+When you finish you will have:
+
+- A Synkronus stack running locally with healthy services
+- Admin credentials verified through the Synkronus web UI
+- Sample data loaded for smoke tests and demos
+- Formulus running on an emulator or device against your stack
+- A short list of follow-up tasks for your own deployment
+
+## Next Steps
+
+- Build forms with [JSON Schema + JSON Forms](/docs/build/forms/overview)
+- Explore the [Synkronus API](/api) for integrations
+- Continue with the [tutorials library](/docs/tutorials) for production deployments
+- If you get stuck, check the [FAQ](/docs/quick-start/faq) or ask on the [ODE community forum](https://forum.opendataensemble.org)
