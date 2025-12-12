@@ -40,8 +40,8 @@ The easiest way to install Formulus is through **F-Droid** and **Obtainium**. Th
 5. Complete the F-Droid installation
 6. Open F-Droid and let it update its repository list (this may take a few minutes on first launch)
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/1_install_fdroid.png" alt="F-Droid download page" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/1_install_fdroid.png" alt="F-Droid download page" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 ##### Step 2: Install Obtainium
@@ -49,29 +49,29 @@ The easiest way to install Formulus is through **F-Droid** and **Obtainium**. Th
 1. Open the **F-Droid** app
 2. Tap the search icon and search for **"Obtainium"**
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/2_fdroid_search_obtainium.png" alt="Search for Obtainium in F-Droid" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/2_fdroid_search_obtainium.png" alt="Search for Obtainium in F-Droid" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 3. Select **Obtainium** from the search results
 4. Tap **"Install"** and wait for the installation to complete
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/3_fdroid_install_obtainium.png" alt="Install Obtainium" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/3_fdroid_install_obtainium.png" alt="Install Obtainium" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 5. Once installed, open **Obtainium**
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/4_open_obtainium.png" alt="Open Obtainium" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/4_open_obtainium.png" alt="Open Obtainium" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 ##### Step 3: Add Formulus to Obtainium
 
 1. In Obtainium, tap the **"Add App"** button (usually a + icon)
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/5_obtainium_empty.png" alt="Obtainium empty state" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/5_obtainium_empty.png" alt="Obtainium empty state" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 2. In the app URL or search field, type: **`OpenDataEnsemble/ode`**
@@ -79,8 +79,8 @@ The easiest way to install Formulus is through **F-Droid** and **Obtainium**. Th
 4. **Enable pre-releases** by toggling the pre-release option (this is important to access the beta versions)
 5. Tap **"Add"** or **"OK"** to confirm
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/6_obtainium_add_app.png" alt="Add app in Obtainium" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/6_obtainium_add_app.png" alt="Add app in Obtainium" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 6. Obtainium will fetch the latest pre-release version of Formulus
@@ -90,31 +90,31 @@ The easiest way to install Formulus is through **F-Droid** and **Obtainium**. Th
 1. Once Obtainium has added Formulus, tap on the Formulus entry in your app list
 2. Tap the **"Install"** button
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/7_app_added_install.png" alt="App added, ready to install" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/7_app_added_install.png" alt="App added, ready to install" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 3. Wait for the APK to download
 4. When prompted, allow installation from Obtainium if needed
 
-<div style="text-align: center; margin: 20px 0; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-  <img src="/img/alpha-install/8a_allow_install.png" alt="Allow installation" style="max-width: 300px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-  <img src="/img/alpha-install/8b_install.png" alt="Install Formulus" style="max-width: 300px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap'}}>
+  <img src="/img/alpha-install/8a_allow_install.png" alt="Allow installation" style={{maxWidth: '300px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
+  <img src="/img/alpha-install/8b_install.png" alt="Install Formulus" style={{maxWidth: '300px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 5. Tap **"Install"** to install Formulus
 6. Once installed, you can launch Formulus directly from Obtainium or from your app drawer
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/9_installed.png" alt="Formulus installed" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/9_installed.png" alt="Formulus installed" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 #### First Launch
 
 When you first open Formulus, you'll see the welcome screen. To get started, tap **"Settings"** to configure your server connection.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/img/alpha-install/X_formulus_welcome.png" alt="Formulus welcome screen" style="max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <img src="/img/alpha-install/X_formulus_welcome.png" alt="Formulus welcome screen" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
 </div>
 
 #### Keeping Formulus Updated
