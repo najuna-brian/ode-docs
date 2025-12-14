@@ -1,197 +1,272 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# Installing Formulus on Your Device
+# Formulus App Setup
 
-## Android
+Build and run the Formulus Android app on a physical device or emulator.
 
-### Recommended: Install via F-Droid and Obtainium
+## Prerequisites
 
-The easiest way to install Formulus is through **F-Droid** and **Obtainium**. This method:
-- ✅ Provides automatic updates
-- ✅ Doesn't require a Google account
-- ✅ No need to download source code or set up a development environment
-- ✅ Get updates directly from the repository
+Before starting, ensure:
 
-#### What You'll Need
+- [ ] Android device connected via USB (or emulator running)
+- [ ] USB debugging enabled on device
+- [ ] ADB recognizes your device
+- [ ] Server is running (see [Synkronus Server Setup](/docs/quick-start/synkronus-server))
 
-**F-Droid** is an open-source app store for Android that focuses on free and open-source software (FOSS). Unlike the Google Play Store, F-Droid:
-- Doesn't require a Google account
-- Respects your privacy (no tracking)
-- Only hosts open-source applications
-- Provides transparent app information and build processes
+## Step 1: Verify Device Connection
 
-**Obtainium** allows you to install and update apps directly from their source code repositories (like GitHub). Benefits include:
-- Get updates directly from developers, often faster than app stores
-- Access pre-release and beta versions
-- No intermediary app store required
-- Automatic update notifications
-- Full control over which apps you track
+Check that your device is recognized:
 
-#### Step-by-Step Installation
+```bash
+adb devices
+```
 
-##### Step 1: Install F-Droid
+**Expected output:**
 
-1. Open your Android device's web browser and navigate to [f-droid.org](https://f-droid.org)
-2. Tap the **"Download F-Droid"** button on the homepage
-3. Once the APK file downloads, open it to begin installation
-4. If prompted, enable **"Install from unknown sources"** or **"Install unknown apps"** for your browser in your device settings
-5. Complete the F-Droid installation
-6. Open F-Droid and let it update its repository list (this may take a few minutes on first launch)
+```
+List of devices attached
+YCYNW18209009206        device
+```
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/1_install_fdroid.png" alt="F-Droid download page" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+If no devices appear:
 
-##### Step 2: Install Obtainium
+1. Enable **Developer Options** on your Android device:
+   - Go to Settings → About Phone
+   - Tap "Build Number" 7 times
 
-1. Open the **F-Droid** app
-2. Tap the search icon and search for **"Obtainium"**
+2. Enable **USB Debugging**:
+   - Go to Settings → Developer Options
+   - Enable "USB Debugging"
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/2_fdroid_search_obtainium.png" alt="Search for Obtainium in F-Droid" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+3. Accept the USB debugging prompt on your device
 
-3. Select **Obtainium** from the search results
-4. Tap **"Install"** and wait for the installation to complete
+4. Try again:
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/3_fdroid_install_obtainium.png" alt="Install Obtainium" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+   ```bash
+   adb devices
+   ```
 
-5. Once installed, open **Obtainium**
+## Step 2: Navigate to Formulus Directory
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/4_open_obtainium.png" alt="Open Obtainium" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+```bash
+cd formulus
+```
 
-##### Step 3: Add Formulus to Obtainium
+## Step 3: Start Metro Bundler (Optional but Recommended)
 
-1. In Obtainium, tap the **"Add App"** button (usually a + icon)
+In a separate terminal, start the Metro bundler:
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/5_obtainium_empty.png" alt="Obtainium empty state" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+```bash
+cd formulus
+npm start
+```
 
-2. In the app URL or search field, type: **`OpenDataEnsemble/ode`**
-3. Obtainium will automatically detect the GitHub repository
-4. **Enable pre-releases** by toggling the pre-release option (this is important to access the beta versions)
-5. Tap **"Add"** or **"OK"** to confirm
+Keep this terminal open. Metro is the JavaScript bundler for React Native.
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/6_obtainium_add_app.png" alt="Add app in Obtainium" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+**Alternative:** Metro will start automatically when you run the app, but starting it manually gives you better control.
 
-6. Obtainium will fetch the latest pre-release version of Formulus
+## Step 4: Build and Run Android App
 
-##### Step 4: Install Formulus
+Build and install the app on your connected device:
 
-1. Once Obtainium has added Formulus, tap on the Formulus entry in your app list
-2. Tap the **"Install"** button
+```bash
+npm run android
+```
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/7_app_added_install.png" alt="App added, ready to install" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+**What this does:**
 
-3. Wait for the APK to download
-4. When prompted, allow installation from Obtainium if needed
+1. Compiles the Android app
+2. Builds the APK
+3. Installs it on your device
+4. Starts the app
+5. Connects to Metro bundler
 
-<div style={{textAlign: 'center', margin: '20px 0', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap'}}>
-  <img src="/img/alpha-install/8a_allow_install.png" alt="Allow installation" style={{maxWidth: '300px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-  <img src="/img/alpha-install/8b_install.png" alt="Install Formulus" style={{maxWidth: '300px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+**Expected output:**
 
-5. Tap **"Install"** to install Formulus
-6. Once installed, you can launch Formulus directly from Obtainium or from your app drawer
+```
+> formulus-app@0.0.1 android
+> react-native run-android
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/9_installed.png" alt="Formulus installed" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+info Installing the app...
+...
+Installing APK 'formulus-v1.0-1-debug-20251211.apk' on 'FIG-LX1 - 8.0.0' for :app:debug
+Installed on 1 device.
+info Connecting to the development server...
+info Starting the app on "YCYNW18209009206"...
+```
 
-#### First Launch
+## Step 5: Verify App is Running
 
-When you first open Formulus, you'll see the welcome screen. To get started, tap **"Settings"** to configure your server connection.
+The app should automatically open on your device. You should see:
 
-<div style={{textAlign: 'center', margin: '20px 0'}}>
-  <img src="/img/alpha-install/X_formulus_welcome.png" alt="Formulus welcome screen" style={{maxWidth: '400px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'}} />
-</div>
+- Formulus splash screen
+- Main app interface
+- No connection errors (yet - we'll configure the server next)
 
-#### Keeping Formulus Updated
+## Building for Different Scenarios
 
-Obtainium will automatically check for new pre-release versions of Formulus. When an update is available:
-1. You'll receive a notification from Obtainium
-2. Open Obtainium and tap on Formulus
-3. Tap **"Update"** to download and install the latest version
+### Build Only (Don't Install)
 
-You can also manually check for updates by opening Obtainium and pulling down to refresh the app list.
+```bash
+cd formulus/android
+./gradlew assembleDebug
+```
 
-#### Troubleshooting
+The APK will be at:
 
-**Can't Install from Unknown Sources**
+```
+formulus/android/app/build/outputs/apk/debug/formulus-v1.0-1-debug-YYYYMMDD.apk
+```
 
-If you're unable to install F-Droid or apps from Obtainium, you may need to enable installation from unknown sources:
-- Go to **Settings** > **Security** (or **Apps**)
-- Find and enable **"Install unknown apps"** or **"Unknown sources"**
-- Grant permission for your browser (for F-Droid) and Obtainium
+### Install on Specific Device
 
-**F-Droid Repository Not Loading**
+```bash
+adb -s DEVICE_ID install -r path/to/app.apk
+```
 
-If F-Droid's repository isn't loading:
-- Ensure you have a stable internet connection
-- Try force-closing and reopening F-Droid
-- Go to **Settings** in F-Droid and tap **"Repositories"**, then pull down to refresh
+### Run on Emulator
 
-**Obtainium Can't Find the App**
+```bash
+# Start emulator first
+emulator -avd YOUR_AVD_NAME
 
-Make sure you've typed the repository name correctly: **`OpenDataEnsemble/ode`**
+# Then run
+npm run android
+```
 
-If issues persist, you can try entering the full GitHub URL: **`https://github.com/OpenDataEnsemble/ode`**
+## Development Workflow
 
-### Alternative Installation Methods
+### Hot Reload
 
-#### Google Play Store
+The app supports Fast Refresh. When you save a file:
 
-**Status:** Coming soon
+- **JavaScript changes** - Automatically reload
+- **Native changes** - Require app restart
 
-Once available, you'll be able to:
-- Search for "Formulus" in the Play Store
-- Tap Install
-- Receive automatic updates through the Play Store
+### Reload Manually
 
-#### Manual Installation (APK)
+- **Shake device** → Select "Reload"
+- **Or** Press `R` twice in Metro terminal
+- **Or** Press `Ctrl+M` (Windows/Linux) or `Cmd+M` (Mac) → Select "Reload"
 
-If you prefer to install manually:
+### Debug Menu
 
-1. Download the APK from [GitHub releases](https://github.com/OpenDataEnsemble/ode/releases)
-2. Enable **"Install from unknown sources"** in your device settings:
-   - Go to **Settings** > **Security** (or **Apps**)
-   - Enable **"Install unknown apps"** for your browser or file manager
-3. Open the downloaded APK file
-4. Tap **"Install"** when prompted
+Access the developer menu:
 
-:::caution Manual Installation
-Manual APK installation requires you to manually check for and download updates. The F-Droid + Obtainium method is recommended for automatic updates.
-:::
+- **Shake device**
+- **Or** `adb shell input keyevent 82` (Menu key)
+- **Or** `Ctrl+M` / `Cmd+M`
 
-#### Development Build
+## Configuring the App
 
-For developers who want to build from source:
+### Option A: Scan QR Code (Recommended)
 
-1. Clone the repository
-2. Set up the Android development environment
-3. Build and install using Android Studio or command line
+1. **Generate QR code** using Synkronus CLI (see [QR Code Login](/docs/components/formulus/configuration#qr-code-login))
+2. **Open Formulus app** on your device
+3. **Tap "Scan QR Code"** on the welcome/settings screen
+4. **Point camera** at the QR code
+5. **Settings auto-populate** - Server URL, username, password
+6. **Tap "Connect"** to verify and save
 
-See [For Developers](/docs/For-developers/android/adb-setup) for detailed setup instructions.
+### Option B: Manual Configuration
 
-:::info Development Builds
-Development builds are for testing and development purposes. For production use, we recommend the F-Droid + Obtainium installation method.
-:::
+1. **Open Formulus app**
+2. **Go to Settings** (gear icon or menu)
+3. **Enter Server URL**: `http://YOUR_SERVER_IP` (e.g., `http://192.168.100.7`)
+4. **Enter Username**: Your username
+5. **Enter Password**: Your password
+6. **Tap "Test Connection"** to verify
+7. **Tap "Save"**
 
-## iOS
+**Important:** Use your computer's IP address (not `localhost`) since your Android device is on a different machine.
 
-Formulus for iOS is coming soon. Check back for updates or see our [documentation](/docs/documentation/formulus/formulus) for the latest information.
+### Finding Your Server IP
 
-## Need Help?
+```bash
+# Linux
+hostname -I | awk '{print $1}'
 
-If you encounter any issues or have questions, please reach out to us at [hello@opendataensemble.org](mailto:hello@opendataensemble.org).
+# macOS
+ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | head -1
+```
+
+## Troubleshooting
+
+### Issue: "No devices/emulators found"
+
+**Solutions:**
+
+```bash
+# Restart ADB
+adb kill-server
+adb start-server
+
+# Check devices
+adb devices
+
+# Verify USB debugging is enabled
+```
+
+### Issue: Build fails with lint errors
+
+**Solution:** For development, you can skip lint:
+
+```bash
+cd formulus/android
+./gradlew assembleDebug -x lintDebug -x lintRelease
+```
+
+### Issue: "Metro bundler not found"
+
+**Solution:** Start Metro manually:
+
+```bash
+cd formulus
+npm start
+```
+
+Then in another terminal:
+
+```bash
+npm run android
+```
+
+### Issue: App crashes on startup
+
+**Check:**
+
+1. Metro bundler is running
+2. Device and computer are on the same network (for Metro)
+3. Check device logs:
+
+   ```bash
+   adb logcat | grep -i "reactnative\|formulus"
+   ```
+
+### Issue: "Unable to resolve module"
+
+**Solution:**
+
+```bash
+cd formulus
+rm -rf node_modules
+npm install
+npm start -- --reset-cache
+```
+
+## Next Steps
+
+Now that the app is running:
+
+1. **Configure the server connection** (see above)
+2. **Login** with your credentials
+3. **Sync app bundle** to download forms
+4. **Start collecting data!**
+
+For more details, see:
+
+- [Formulus Configuration](/docs/components/formulus/configuration)
+- [Using Formulus App](/docs/components/formulus/features)
+- [Troubleshooting](/docs/components/formulus/troubleshooting)
